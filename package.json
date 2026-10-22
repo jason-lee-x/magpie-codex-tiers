@@ -2,7 +2,7 @@
   "name": "magpie-codex-tiers",
   "version": "1.0.0",
   "type": "module",
-  "description": "Codex service_tier rules and reset forecasts for Magpie / 按模型设置 Codex 档位与重置预告临时提速",
+  "description": "为 Magpie 提供 Codex 档位管理：按模型设置 service_tier，并在额度重置预告期间临时提速",
   "repository": {
     "type": "git",
     "url": "https://github.com/jason-lee-x/magpie-codex-tiers.git"
