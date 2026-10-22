@@ -1,0 +1,62 @@
+{
+  "name": "magpie-codex-tiers",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Codex service_tier rules and reset forecasts for Magpie / 按模型设置 Codex 档位与重置预告临时提速",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jason-lee-x/magpie-codex-tiers.git"
+  },
+  "homepage": "https://github.com/jason-lee-x/magpie-codex-tiers#readme",
+  "bugs": "https://github.com/jason-lee-x/magpie-codex-tiers/issues",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check codex-tiers.middleware.js && node --check reset.hooks.js && node --check page/app.js"
+  },
+  "license": "MIT",
+  "files": [
+    "codex-tiers.middleware.js",
+    "reset.hooks.js",
+    "page/index.html",
+    "page/style.css",
+    "page/app.js",
+    "page/icon.svg",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "codex",
+    "service_tier",
+    "fast",
+    "middleware"
+  ],
+  "magpie": {
+    "icon": "page/icon.svg",
+    "middleware": "./codex-tiers.middleware.js",
+    "hooks": "./reset.hooks.js",
+    "page": {
+      "title": "Codex Tiers",
+      "titles": {
+        "zh": "Codex 档位",
+        "zh-TW": "Codex 檔位",
+        "ja": "Codex ティア"
+      },
+      "file": "page/index.html",
+      "icon": "page/icon.svg"
+    },
+    "permissions": ["usage:summary"],
+    "options": {
+      "models": [],
+      "defaultTier": "keep",
+      "reset": {
+        "enabled": false,
+        "tier": "ultrafast",
+        "refreshMin": 5,
+        "phase": "idle"
+      }
+    }
+  }
+}

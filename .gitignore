@@ -1,0 +1,19 @@
+# 发布采用白名单，避免本地配置、截图、日志和调试产物进入仓库。
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/README.zh-CN.md
+!/LICENSE
+!/package.json
+!/codex-tiers.middleware.js
+!/reset.hooks.js
+!/page/
+!/tests/
+/page/*
+!/page/index.html
+!/page/app.js
+!/page/style.css
+!/page/icon.svg
+/tests/*
+!/tests/*.test.mjs

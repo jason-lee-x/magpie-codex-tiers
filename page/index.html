@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 档位</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="_magpie/bridge.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="card" id="reset-card">
+      <div class="row-head">
+        <h2 id="reset-title" data-i18n="resetTitle">重置预告</h2>
+        <span class="badge" id="reset-badge" hidden></span>
+      </div>
+
+      <div class="reset-body">
+        <p class="reset-when" id="reset-when" hidden></p>
+        <p class="reset-none" id="reset-none" data-i18n="resetNone">暂时没有重置预告。</p>
+        <p class="reset-note" id="reset-note" hidden></p>
+      </div>
+
+      <div class="row-head reset-mode-head">
+        <span class="reset-mode-label" data-i18n="resetMode">收到预告时</span>
+        <button class="reset-link" id="reset-copy" type="button" hidden>
+          <svg viewBox="0 0 20 20" width="13" height="13" fill="currentColor" aria-hidden="true">
+            <path d="M11.9 2h6.1v6.1h-1.9V5.24l-6.4 6.4-1.35-1.35 6.4-6.4H11.9V2Z"/>
+            <path d="M4 4h4.2v1.9H5.9v8.2h8.2v-2.3H16V16a1.9 1.9 0 0 1-1.9 1.9H4A1.9 1.9 0 0 1 2.1 16V5.9A1.9 1.9 0 0 1 4 4Z"/>
+          </svg>
+          <span data-i18n="resetSource">来源</span>
+        </button>
+      </div>
+      <div class="seg" id="reset-tier" role="group"></div>
+
+      <div class="reset-foot">
+        <label class="reset-rate" id="reset-rate-label">
+          <span data-i18n="resetRate">预告刷新</span>
+          <select id="reset-rate"></select>
+        </label>
+        <span class="reset-credit">
+          <span class="reset-credit-lead" data-i18n="resetCredit">数据来自</span>
+          <button type="button" class="reset-credit-site" id="reset-credit">didcodexreset.com</button>
+        </span>
+      </div>
+      <p class="reset-copied" id="reset-copied" role="status" hidden></p>
+    </section>
+
+    <section class="card">
+      <div class="row-head">
+        <h2 id="global-title" data-i18n="globalTitle">全局</h2>
+      </div>
+      <div class="seg" id="global-tier" role="group"></div>
+    </section>
+
+    <section class="card">
+      <div class="row-head">
+        <h2 id="models-title" data-i18n="modelsTitle">按模型设定 service_tier</h2>
+        <span class="status" id="save-status" role="status" aria-live="polite"></span>
+      </div>
+
+      <ul class="rules" id="rules"></ul>
+      <p class="empty" id="rules-empty">还没有规则。</p>
+
+      <form class="add" id="add-form" autocomplete="off">
+        <div class="combo">
+          <input id="add-input" type="text" spellcheck="false" role="combobox"
+                 aria-expanded="false" aria-autocomplete="list" aria-controls="combo-list">
+          <ul class="combo-list" id="combo-list" role="listbox" hidden></ul>
+        </div>
+        <button type="submit" class="btn" data-i18n="add">添加</button>
+      </form>
+      <p class="hint" id="add-hint" role="status" hidden></p>
+    </section>
+  </main>
+</body>
+</html>
